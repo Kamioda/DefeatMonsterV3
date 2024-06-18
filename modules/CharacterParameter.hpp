@@ -7,7 +7,7 @@ namespace kamioda {
 	class CharacterParameter : public Number<I> {
 	private:
 		constexpr I subtractBetweenValAndMin() const noexcept {
-			return Number<I>::get<I>() - Number<I>::m_minVal;
+			return Number<I>::template get<I>() - Number<I>::m_minVal;
 		}
 		constexpr I subtractBetweenMaxAndMin() const noexcept {
 			return Number<I>::m_maxVal - Number<I>::m_minVal;
@@ -19,10 +19,10 @@ namespace kamioda {
 			return Number<I>::m_minVal == Number<I>::m_maxVal ? 0 : this->calcRatio();
 		}
 		constexpr bool isMin() const noexcept {
-			return Number<I>::get<I>() == Number<I>::m_minVal;
+			return Number<I>::template get<I>() == Number<I>::m_minVal;
 		}
 		constexpr bool isMax() const noexcept {
-			return Number<I>::get<I>() == Number<I>::m_maxVal;
+			return Number<I>::template get<I>() == Number<I>::m_maxVal;
 		}
 	public:
 		constexpr CharacterParameter() noexcept : Number<I>() {}
