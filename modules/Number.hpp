@@ -187,11 +187,7 @@ namespace kamioda {
         constexpr bool operator>=(const I& other) const {
             return this->m_value >= other;
         }
-        template<typename T = I, std::enable_if_t<std::is_same_v<I, T>, std::nullptr_t> = nullptr>
-        constexpr const I& get() const {
-            return this->m_value;
-        }
-        template<typename T, std::enable_if_t<std::is_arithmetic_v<T> && !std::is_same_v<I, T>, std::nullptr_t> = nullptr>
+        template<arithmetic T = I>
         constexpr T get() const {
             return static_cast<T>(this->m_value);
         }
