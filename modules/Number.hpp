@@ -22,8 +22,8 @@ namespace kamioda {
     private:
         I m_value;
     protected:
-        const I m_minVal;
-        const I m_maxVal;
+        I m_minVal;
+        I m_maxVal;
     private:
         constexpr I clamp(const I& value) const {
 			return std::clamp(value, this->m_minVal, this->m_maxVal);
