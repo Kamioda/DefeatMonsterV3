@@ -1,4 +1,4 @@
-#include <iutest/iutest.hpp>
+#include <iutest.hpp>
 #include "CharacterParameter.hpp"
 
 template<std::signed_integral I>
