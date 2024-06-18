@@ -13,7 +13,7 @@ namespace kamioda {
 			return Number<I>::m_maxVal - Number<I>::m_minVal;
 		}
 		constexpr int calcRatio() const {
-			return static_cast<int>((static_cast<double>(this->subtractBetweenValAndMin()) / static_cast<double>(this->subtractBetweenMaxAndMin()) + 0.5) * 100);
+			return static_cast<int>(static_cast<double>(this->subtractBetweenValAndMin()) / static_cast<double>(this->subtractBetweenMaxAndMin()) * 100 + 0.5);
 		}
 		constexpr int getRatioImpl() const {
 			return Number<I>::m_minVal == Number<I>::m_maxVal ? 0 : this->calcRatio();
